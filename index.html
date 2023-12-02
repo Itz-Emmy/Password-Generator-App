@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <main>
+      <div class="generator">
+        <h1>Password Generator</h1>
+        <label class="password-container">
+          <input
+            type="text"
+            id="password"
+            readonly
+            placeholder="Generate Password"
+          />
+          <button class="material-symbols-outlined" id="copy">
+            content_copy
+          </button>
+        </label>
+
+        <label>
+          <span>Password Length:</span>
+          <input type="number" id="length" value="16" />
+        </label>
+        <label for="uppercase">
+          <span>Include Uppercase Letters:</span>
+          <input type="checkbox" id="uppercase" checked />
+        </label>
+        <label for="lowercase">
+          <span>Include Lowercase Letters:</span>
+          <input type="checkbox" id="lowercase" checked />
+        </label>
+        <label for="numbers">
+          <span>Include Numbers:</span>
+          <input type="checkbox" id="numbers" checked />
+        </label>
+        <label for="symbols">
+          <span>Include Symbols:</span>
+          <input type="checkbox" id="symbols" checked />
+        </label>
+
+        <button type="submit" id="generate">Generate Password</button>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
