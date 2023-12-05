@@ -10,7 +10,7 @@ const copyBtn = document.querySelector("#copy");
 const lowercase = "abcdefgijklmnopqrstuvwxyz";
 const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const allNumbers = "0123456789";
-const allSymbols = ` ~!@#$%^&*()_-+={[}]|\:;"'<,>.?/`;
+const allSymbols = "~!@#$%^&*_-+=:;<,>.?";
 
 const generatePassword = () => {
   let password = "";
@@ -33,12 +33,18 @@ const generatePassword = () => {
   }
 };
 
-async function copyPassword() {
+const copyPassword = () => {
   if (navigator.clipboard) {
-    await navigator.clipboard.writeText(passwordInput.value);
-    alert("Password copied to clipboard");
+    navigator.clipboard
+      .writeText(passwordInput.value)
+      .then(function () {
+        alert("Password copied to clipboard");
+      })
+      .catch(function (error) {
+        console.error("Unable to copy to clipboard", error);
+      });
   }
-}
+};
 
 passwordBtn.addEventListener("click", generatePassword);
 copyBtn.addEventListener("click", copyPassword);
